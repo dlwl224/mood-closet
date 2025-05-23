@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mood Closet - 오늘의 옷 추천</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>오늘의 옷 추천 AI</h1>
+      <p class="subtitle">당신의 기분과 날씨에 어울리는 스타일을 추천해 드립니다</p>
+    </header>
+    <main>
+      <section class="image-container">
+        <img src="./images/outfit.png" alt="오늘의 옷 추천">
+      </section>
+      <form id="ootd-form" class="form">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">성별</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>성별 선택</option>
+            <option value="남성">남성</option>
+            <option value="여성">여성</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mood">오늘 기분</label>
+          <input type="text" id="mood" name="mood" placeholder="설렘, 우울 등" required>
+        </div>
+        <div class="form-group">
+          <label for="weather">현재 날씨</label>
+          <select id="weather" name="weather" required>
+            <option value="" disabled selected>날씨 선택</option>
+            <option value="맑음">맑음</option>
+            <option value="흐림">흐림</option>
+            <option value="비">비</option>
+            <option value="눈">눈</option>
+            <option value="쌀쌀함">쌀쌀함</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">추천받기</button>
+      </form>
+      <div id="result" class="result"></div>
+    </main>
+    <footer class="footer">
+      <p>© 2025 Mood Closet</p>
+    </footer>
+    <script>
+      document.getElementById('ootd-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = e.target.name.value.trim();
+        const gender = e.target.gender.value;
+        const mood = e.target.mood.value.trim();
+        const weather = e.target.weather.value;
+        const resultEl = document.getElementById('result');
+        resultEl.textContent = '추천을 불러오는 중입니다...';
+        try {
+          const res = await fetch('https://assign-snowy.vercel.app/api/ootdAI', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, gender, mood, weather }),
+          });
+          const data = await res.json();
+          if (res.ok) {
+            resultEl.innerHTML = `<pre>${data.outfit}</pre>`;
+          } else {
+            resultEl.textContent = data.error || '추천 실패';
+          }
+        } catch (err) {
+          console.error(err);
+          resultEl.textContent = '서버 오류 발생';
+        }
+      });
+    </script>
+  </body>
+</html>

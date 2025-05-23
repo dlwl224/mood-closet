@@ -1,0 +1,126 @@
+/* style.css */
+
+/* 전체 레이아웃 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 헤더 */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #333;
+}
+header .subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* 이미지 */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.image-container img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 폼 스타일 */
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+.form-group input,
+.form-group select {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #a855f7;
+  outline: none;
+}
+
+/* 버튼 */
+.btn-submit {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #7e5bef, #a855f7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background: linear-gradient(135deg, #6b46c1, #9333ea);
+}
+
+/* 결과 영역 */
+.result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+/* 푸터 */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

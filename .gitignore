@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# 에디터 설정
+.vscode/
+
+# (필요 없으면 지워도 OK)
+node_modules/
+.env
