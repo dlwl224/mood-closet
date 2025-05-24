@@ -13,7 +13,7 @@
     </header>
     <main>
       <section class="image-container">
-        <img src="./images/outfit.jpg" alt="오늘의 옷 추천">
+        <img src="./image/outfit.jpg" alt="오늘의 옷 추천">
       </section>
       <form id="ootd-form" class="form">
         <div class="form-group">
@@ -54,10 +54,15 @@
       // Markdown 강조(**bold**)와 해시태그(#tag)를 HTML로 변환
       function parseMarkdown(text) {
         return text
+          // \* 또는 \# 처럼 마크다운에서 이스케이프된 문자 제거
+          .replace(/\\([*#])/g, '$1')
+          // **볼드**
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          // #해시태그
           .replace(/#(\w+)/g, '<span class="hashtag">#$1</span>')
+          // 줄바꿈
           .replace(/\n/g, '<br>');
-      }
+  }
       document.getElementById('ootd-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = e.target.name.value.trim();
