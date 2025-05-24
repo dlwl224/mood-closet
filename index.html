@@ -43,7 +43,7 @@
             <option value="쌀쌀함">쌀쌀함</option>
           </select>
         </div>
-        <button type="submit" class="btn-submit">추천받기</button>
+        <button type="submit" class="btn-submit">오늘의 옷 추천받기</button>
       </form>
       <div id="result" class="result"></div>
     </main>
@@ -74,7 +74,7 @@
           });
           const data = await res.json();
           if (res.ok) {
-            resultEl.innerHTML = `<pre>${data.outfit}</pre>`;
+            resultEl.innerHTML = parseMarkdown(data.outfit);
           } else {
             resultEl.textContent = data.error || '추천 실패';
           }

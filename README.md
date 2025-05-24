@@ -4,7 +4,7 @@
 
 * **서비스 명** : <span style="background-color:rgb(126,91,239)">Mood Closet</span>
 * **서비스 설명** : 사용자로부터 **이름**, **성별**, **오늘 기분**, **현재 날씨**를 입력받으면, <span style="background-color:rgb(126,91,239)">Mood Closet</span>은 그 정보에 어울리는 오늘의 옷 코디를 감성적이면서도 현실적으로 추천해 주는 AI 스타일러입니다.
-* **서비스 접속 주소** : [https://your-github-username.github.io/mood-closet]
+* **서비스 접속 주소** : https://dlwl224.github.io/mood-closet/
 
 ---
 
@@ -50,7 +50,7 @@ api/ootdAI.js    # 요청 처리 및 Gemini 호출 로직
 
 ## 사용 방법
 
-1. **웹 페이지 접속**: [https://your-github-username.github.io/mood-closet](https://your-github-username.github.io/mood-closet)
+1. **웹 페이지 접속**: https://dlwl224.github.io/mood-closet/
 2. **입력**: 이름 · 성별 · 오늘 기분 · 현재 날씨 선택
 3. **추천받기** 버튼 클릭
 4. **추천 결과**: AI가 제안하는 상의/하의/신발/아우터 코디와 스타일 해시태그, 감성 코멘트 확인
@@ -59,8 +59,8 @@ api/ootdAI.js    # 요청 처리 및 Gemini 호출 로직
 
 ## GitHub 레포지토리
 
-* **프론트엔드**: [https://github.com/your-github-username/mood-closet](https://github.com/your-github-username/mood-closet)
-* **백엔드**: [https://github.com/your-github-username/mood-closet-api](https://github.com/your-github-username/mood-closet-api)
+* **프론트엔드**: https://github.com/dlwl224/mood-closet.git
+* **백엔드**: https://github.com/dlwl224/mood-closet-api.git
 
 ---
 
