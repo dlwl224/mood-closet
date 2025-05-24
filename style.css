@@ -5,16 +5,14 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f0f4f8;
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  padding: 1rem; /* 위아래 여백 추가 */
 }
 
+/* 중앙 정렬 및 최대너비 설정 */
 .container {
   width: 100%;
   max-width: 480px;
+  margin: 0 auto;  /* 좌우 중앙 */
   background: #ffffff;
   border-radius: 12px;
   padding: 2rem;
@@ -44,7 +42,8 @@ header .subtitle {
   margin-bottom: 1.5rem;
 }
 .image-container img {
-  width: 100%;
+  width: 100%;    /* 부모 폭에 맞춤 */
+  height: auto;   /* 비율 유지 */
   max-width: 260px;
   border-radius: 8px;
   object-fit: cover;
@@ -107,6 +106,15 @@ header .subtitle {
   white-space: pre-wrap;
 }
 
+/* 강조 태그 */
+strong {
+  font-weight: bold;
+}
+.hashtag {
+  color: #7e5bef;
+  font-weight: 600;
+}
+
 /* 푸터 */
 .footer {
   margin-top: 2rem;
@@ -124,3 +132,4 @@ header .subtitle {
     font-size: 1.5rem;
   }
 }
+

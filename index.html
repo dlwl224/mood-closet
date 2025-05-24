@@ -51,6 +51,13 @@
       <p>© 2025 Mood Closet</p>
     </footer>
     <script>
+      // Markdown 강조(**bold**)와 해시태그(#tag)를 HTML로 변환
+      function parseMarkdown(text) {
+        return text
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/#(\w+)/g, '<span class="hashtag">#$1</span>')
+          .replace(/\n/g, '<br>');
+      }
       document.getElementById('ootd-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = e.target.name.value.trim();
